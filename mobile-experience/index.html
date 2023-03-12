@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<title>Dolby.io Stream Publisher App</title>
+        <meta name="description" content="" />
+
+		<script src="https://cdn.jsdelivr.net/npm/@millicast/sdk/dist/millicast.umd.min.js"></script>
+		<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.7.2.2.min.js"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+  <body>
+    <header></header>
+    <section>
+      <article>
+        <h2 id="titleCard">Immerse on Any Device with Dolby.io and PubNub</h2>
+        <h2 id="subText">Joining the experience requires front facing camera access.</h2>
+        <div>
+			<button id="startBtn" onclick="connectStream()">Join the Experience</button>
+			<button id="endBtn" disabled onclick="stopStream()">Leave the Experience</button>
+		</div>
+        <video width="100%" id="videoPlayer" class="vidBox" hidden controls>
+			Your browser does not support the video playback with the video tag.
+		</video>
+		
+      </article>
+      <article>
+        <div class="topnav">
+			<a href="https://docs.dolby.io/" target='_blank'>Dolby.io</a>
+			<a href="https://www.pubnub.com/docs" target='_blank'>PubNub</a>
+		</div>
+      </article>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
