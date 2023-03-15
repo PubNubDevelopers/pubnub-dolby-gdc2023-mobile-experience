@@ -23,7 +23,8 @@ async function createPublisher() {
 		headers: { accept: "application/json", "content-type": "application/json" },
 	};
 
-	let response = await fetch("https://dolbyio-pubnub-gdc2023.netlify.app/public/auth/dolbyio/stream", options);
+
+	let response = await fetch("http://localhost:7778/auth/dolbyio/stream", options);
 	let res = await response.json();
 	console.log(res);
 
@@ -47,7 +48,7 @@ async function createPubNub() {
 		headers: { accept: "application/json", "content-type": "application/json" },
 	};
 
-	let response = await fetch("https://dolbyio-pubnub-gdc2023.netlify.app/public/auth/dolbyio/pubnub", options);
+	let response = await fetch("http://localhost:7778/auth/dolbyio/pubnub", options);
 	let res = await response.json();
 	console.log(res);
 
