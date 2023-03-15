@@ -29,6 +29,7 @@ app.use((req, res, next) => {
 	}
 	next();
 });
+app.use(express.static('public'))
 
 //Create streamName token pair for viewers. http://localhost:7778/auth/dolbyio/stream;
 app.get("/auth/dolbyio/stream", (req, res) => {
