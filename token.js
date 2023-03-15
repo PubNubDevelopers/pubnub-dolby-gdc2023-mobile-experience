@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 app.use(express.static('public'))
 
 //Create streamName token pair for viewers. http://localhost:7778/auth/dolbyio/stream;
-app.get("/auth/dolbyio/stream", (req, res) => {
+app.get("/public/auth/dolbyio/stream", (req, res) => {
 	const d = new Date();
 	var streamName = "GDC_Stream_" + String(d.getTime());
 	tokenList.push(streamName);
@@ -41,11 +41,11 @@ app.get("/auth/dolbyio/stream", (req, res) => {
 });
 
 // spatial token... if needed?
-app.get("/auth/dolbyio/spatial", (req, res) => {
+app.get("/public/auth/dolbyio/spatial", (req, res) => {
 	res.send("Not implemented");
 });
 // Return the PubNub Keys and authorization for user.
-app.get("/auth/dolbyio/pubnub", (req, res) => {
+app.get("/public/auth/dolbyio/pubnub", (req, res) => {
 	//Normally, would make use of PubNub's Access Manager to retrieve keys and permission rights for
 	//a specific user.
 	//To keep things simple, returning the static subscribe and publish key.
