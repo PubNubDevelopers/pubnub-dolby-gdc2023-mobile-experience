@@ -6,7 +6,7 @@ const express = require("express"),
 
 // Static
 const port = "7778";
-const streamingKey = "b83fce09af13b36220f3cac3f2d0f9ac6c168fa0be5495ea9ba0f25af293f0f9";
+const streamingKey = "39409cde4046880b3b8ea0be255503fd1d47ef88565be16bb42e323595c1f151";
 const streamingAuthPath = "https://api.millicast.com/api/publish_token/";
 let tokenList = []; //Token list will track token names to server to Unity Experience
 const pnPublishKey = "pub-c-ec1b608c-c9a0-4989-a56f-590694da613e"; //key for publishing messages on pubnub network
