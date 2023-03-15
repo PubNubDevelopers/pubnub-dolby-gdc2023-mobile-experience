@@ -3,6 +3,7 @@
 // Imports
 const express = require("express"),
 	fs = require("fs");
+const cors = require('cors');
 
 // Static
 const port = "7778";
@@ -18,17 +19,8 @@ const httpsOptions = {
 	cert: fs.readFileSync("certs/server.crt"),
 };
 const app = express();
+app.use(cors());
 
-// For testing;
-app.use((req, res, next) => {
-	res.setHeader("Access-Control-Allow-Origin", "*");
-	res.setHeader("Access-Control-Allow-Methods", "OPTIONS, GET, POST, PUT, PATCH, DELETE");
-	res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-	if (req.method === "OPTIONS") {
-		return res.sendStatus(200);
-	}
-	next();
-});
 app.use(express.static('public'))
 
 //Create streamName token pair for viewers. http://localhost:7778/auth/dolbyio/stream;
